@@ -39,7 +39,7 @@ const App = () => {
   const loadTrendingMovies = async () => {
   try {
     const movies = await getTrendingMovies();
-    alert("🔥 Trending from Appwrite:", movies);
+    alert(`🔥 Trending from Appwrite:${movies}`);
     setTrendingMovies(movies);
   } catch (error) {
    alert(`🔥 Error fetching trending, ${error}`);

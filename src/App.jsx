@@ -16,9 +16,7 @@ import {getTrendingMovies} from './appwrite.js'
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-if (!API_KEY) {
-  alert("Missing TMDB API Key");
-}
+
 
 const API_OPTIONS = {
   method: 'GET',
@@ -41,10 +39,9 @@ const App = () => {
   const loadTrendingMovies = async () => {
   try {
     const movies = await getTrendingMovies();
-    alert(`🔥 Trending from Appwrite:${movies}`);
     setTrendingMovies(movies);
   } catch (error) {
-   alert(`🔥 Error fetching trending, ${error}`);
+    console.log(error)
   }
 };
  
@@ -71,8 +68,7 @@ const App = () => {
       
       const data = await response.json();
      
-     alert(`TMDB  Fetched  movies ${data.results}`)
-     
+
      
       if(data.Response === 'False'){
         setErrorMessage(data.Error || ',Failed to fetch movies')
@@ -97,15 +93,6 @@ const App = () => {
     
   }
 
- useEffect(() => {
-  alert(`ENV:
-  PROJECT_ID: ${import.meta.env.VITE_APPWRITE_PROJECT_ID}
-  DATABASE_ID: ${import.meta.env.VITE_APPWRITE_DATABASE_ID}
-  COLLECTION_ID: ${import.meta.env.VITE_APPWRITE_COLLECTION_ID}
-  ENDPOINT_ID: ${import.meta.env.VITE_APPWRITE_ENDPOINT_ID}
-  DB_API_ID: ${import.meta.env.VITE_TMDB_API_KEY}`);
- 
-}, []);
 
  
   

@@ -1,4 +1,5 @@
 import React from 'react'
+alert("App Loaded"); // put this at the top of App.jsx
 import {useState, useEffect} from 'react'
 import Search from './components/Search'
 import Spinner from './components/Spinner'
@@ -7,9 +8,8 @@ import {useDebounce} from 'react-use'
 import {updateSearchCount} from './appwrite.js'
 
 
-import {getTrendingMovies} from './appwrite.js'
 
-alert("App Loaded"); // put this at the top of App.jsx
+
 
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';

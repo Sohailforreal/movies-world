@@ -13,6 +13,10 @@ import {getTrendingMovies} from './appwrite.js'
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
+if (!API_KEY) {
+  alert("Missing TMDB API Key");
+}
+
 const API_OPTIONS = {
   method: 'GET',
   headers: {

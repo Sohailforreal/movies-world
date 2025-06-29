@@ -10,7 +10,7 @@ const Search =(props)=>{
           
           <input
            type="text"
-           placeholder="Search from Thousands of Movies"
+           placeholder="Movies on fingertips"
            value={props.searchTerm}
            onChange={(e) => props.setSearchTerm(e.target.value)}
           />

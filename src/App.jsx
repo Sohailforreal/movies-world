@@ -36,20 +36,15 @@ const App = () => {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   useDebounce( ()=> setDebouncedSearchTerm(searchTerm), 600, [searchTerm])
   
- const loadTrendingMovies = async () =>{
-
-   
-   try{
-      const movies = await getTrendingMovies();
-      alert(`trending  movies ${movies}`)
-      setTrendingMovies(movies);
-     
-     
-   } catch(error){
-     console.log(`error fetching trending movies: ${error}`);
-   }
-   
- }
+  const loadTrendingMovies = async () => {
+  try {
+    const movies = await getTrendingMovies();
+    alert("🔥 Trending from Appwrite:", movies);
+    setTrendingMovies(movies);
+  } catch (error) {
+   alert(`🔥 Error fetching trending, ${error}`);
+  }
+};
  
   
   

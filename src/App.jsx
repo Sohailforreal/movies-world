@@ -11,6 +11,8 @@ import {getTrendingMovies} from './appwrite.js'
 
 
 
+
+
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
@@ -95,7 +97,17 @@ const App = () => {
     
   }
 
-  
+ useEffect(() => {
+  alert(`ENV:
+  PROJECT_ID: ${import.meta.env.VITE_APPWRITE_PROJECT_ID}
+  DATABASE_ID: ${import.meta.env.VITE_APPWRITE_DATABASE_ID}
+  COLLECTION_ID: ${import.meta.env.VITE_APPWRITE_COLLECTION_ID}
+  ENDPOINT_ID: ${import.meta.env.VITE_APPWRITE_ENDPOINT_ID}
+  DB_API_ID: ${import.meta.env.VITE_TMDB_API_KEY}`);
+ 
+}, []);
+
+ 
   
   useEffect(()=>{
     fetchMovies(debouncedSearchTerm);
